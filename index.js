@@ -20,9 +20,10 @@ function parse(html) {
       var dm = schedule.diff(moment(), 'minute');
       var c = (dh == 0) ? 'red' : 'gray';
       var n = (dh == 0) ? 'green' : 'gray';
+      var s = (dh > 0 || dm > 0) ? 's' : '';
       if (dh >= 0)
         console.log(color[n](SHOLAT[currentIndex]), 
-          color[c]('in ' + schedule.fromNow(dh == 0 ? 'm': 'h')), 
+          color[c]('in ' +  (dh == 0 ? dm : dh) + (dh == 0 ? ' minute': ' hour') + s),
           dh == 0 ? color.magenta('<-') : '', 
           val);
       currentIndex = -1;
