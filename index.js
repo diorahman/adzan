@@ -22,9 +22,9 @@ function parse(html) {
       var n = (dh == 0) ? 'green' : 'gray';
       if (dh >= 0)
         console.log(color[n](SHOLAT[currentIndex]), 
-        color[c]('in ' + schedule.fromNow(dh == 0 ? 'm': 'h')), 
-        dh == 0 ? color.magenta('<-') : '', 
-        val);
+          color[c]('in ' + schedule.fromNow(dh == 0 ? 'm': 'h')), 
+          dh == 0 ? color.magenta('<-') : '', 
+          val);
       currentIndex = -1;
     }
     if (idx >= 0) {
