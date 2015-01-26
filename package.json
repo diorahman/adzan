@@ -1,0 +1,25 @@
+{
+  "name": "adzan",
+  "version": "1.0.0",
+  "description": "cli for querying adzan",
+  "main": "index.js",
+  "bin": "bin/adzan",
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "colorful": "^2.1.0",
+    "hyperquest": "^1.0.1",
+    "moment": "^2.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "adzan",
+    "sholat",
+    "salah",
+    "athan"
+  ],
+  "author": "Dhi Aurrahman <diorahman@rockybars.com>",
+  "license": "MIT"
+}
