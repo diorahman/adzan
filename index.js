@@ -4,7 +4,7 @@ var color = require('colorful');
 var moment = require('moment');
 
 var BASE_URL = 'http://www.jadwalsholat.org/adzan/ajax/ajax.daily1.php';
-var DEFAULT = 308; // bandung
+var DEFAULT = 14; // bandung
 var SHOLAT = ['Shubuh', 'Dzuhur', 'Ashr', 'Maghrib', 'Isya'];
 
 function parse(html) {
@@ -22,9 +22,9 @@ function parse(html) {
       var n = (dh == 0) ? 'green' : 'gray';
       if (dh >= 0)
         console.log(color[n](SHOLAT[currentIndex]), 
-          color[c]('in ' + schedule.fromNow(dh == 0 ? 'm': 'h')), 
-          dh == 0 ? color.magenta('<-') : '', 
-          dh > 0 ? val : '');
+        color[c]('in ' + schedule.fromNow(dh == 0 ? 'm': 'h')), 
+        dh == 0 ? color.magenta('<-') : '', 
+        val);
       currentIndex = -1;
     }
     if (idx >= 0) {
