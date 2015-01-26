@@ -22,6 +22,9 @@ function parse(html) {
       var n = (dh == 0) ? 'green' : 'gray';
       var s = (dh > 0 || dm > 0) ? 's' : '';
       if (dh >= 0)
+        if (dm == 0)
+          console.log('حي على الصلاة');
+        else
         console.log(color[n](SHOLAT[currentIndex]), 
           color[c]('in ' +  (dh == 0 ? dm : dh) + (dh == 0 ? ' minute': ' hour') + s),
           dh == 0 ? color.magenta('<-') : '', 
@@ -41,6 +44,7 @@ module.exports = function () {
     body += chunk;
   });
   r.on('end', function(){
+    console.log('حي على الصلاة');
     parse(body);
   });
 }
