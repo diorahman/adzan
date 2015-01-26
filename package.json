@@ -1,6 +1,6 @@
 {
   "name": "adzan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "cli for querying adzan",
   "main": "index.js",
   "bin": "bin/adzan",
