@@ -21,13 +21,13 @@ function parse(html) {
       var c = (dh == 0) ? 'red' : 'gray';
       var n = (dh == 0) ? 'green' : 'gray';
       var s = (dh > 0 || dm > 0) ? 's' : '';
-      if (dh >= 0)
+      if (dh >= 0 && dm >=0)
         if (dm == 0)
           console.log('حي على الصلاة');
         else
         console.log(color[n](SHOLAT[currentIndex]), 
           color[c]('in ' +  (dh == 0 ? dm : dh) + (dh == 0 ? ' minute': ' hour') + s),
-          dh == 0 ? color.magenta('<-') : '', 
+          dh == 0  && dm >= 0 ? color.magenta('<-') : '', 
           val);
       currentIndex = -1;
     }

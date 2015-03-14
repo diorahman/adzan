@@ -1,18 +1,16 @@
 {
   "name": "adzan",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "cli for querying adzan",
   "main": "index.js",
-  "bin": "bin/adzan",
+  "bin": {
+    "adzan": "bin/adzan"
+  },
   "dependencies": {
     "cheerio": "^0.18.0",
     "colorful": "^2.1.0",
     "hyperquest": "^1.0.1",
     "moment": "^2.9.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "make test"
   },
   "keywords": [
     "adzan",
@@ -21,5 +19,17 @@
     "athan"
   ],
   "author": "Dhi Aurrahman <diorahman@rockybars.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diorahman/adzan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diorahman/adzan/issues"
+  },
+  "homepage": "https://github.com/diorahman/adzan",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
