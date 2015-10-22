@@ -3,7 +3,7 @@ var cheerio = require('cheerio');
 var color = require('colorful');
 var moment = require('moment');
 
-var BASE_URL = 'http://www.jadwalsholat.org/adzan/ajax/ajax.daily1.php';
+var BASE_URL = 'http://sholat.cf/adzan/ajax/ajax.daily1.php';
 var DEFAULT = 14; // bandung
 var SHOLAT = ['Shubuh', 'Dzuhur', 'Ashr', 'Maghrib', 'Isya'];
 
