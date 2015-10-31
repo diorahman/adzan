@@ -62,7 +62,7 @@ function get(key){
 function snapshotCache(){
 	var content = JSON.stringify(Storage)
 	fs.writeFile(cachePath,content,function(err){
-		console.log("Is error write local cache?", err)
+		// console.log("Is error write local cache?", err)
 	})
 }
 
