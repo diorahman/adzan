@@ -2,6 +2,7 @@ var request = require('hyperquest');
 var cheerio = require('cheerio');
 var color = require('colorful');
 var moment = require('moment');
+var localCache = require('./LocalCache')
 
 var BASE_URL = 'http://sholat.cf/adzan/ajax/ajax.daily1.php';
 var DEFAULT = 14; // bandung
@@ -38,13 +39,20 @@ function parse(html) {
 }
 
 module.exports = function () {
-  var r = request(BASE_URL + '?id=' + DEFAULT);
-  var body = '';
-  r.on('data', function(chunk){
-    body += chunk;
-  });
-  r.on('end', function(){
-    console.log('حي على الصلاة');
-    parse(body);
-  });
+  console.log('حي على الصلاة');
+  var data = localCache.get()
+    .then(function(data){
+      parse(JSON.stringify(data));
+    })
+    .catch(function(e){
+      var r = request(BASE_URL + '?id=' + DEFAULT);
+      var body = '';
+      r.on('data', function(chunk){
+        body += chunk;
+      });
+      r.on('end', function(){
+        localCache.store("adzan",body)
+        parse(body);
+      });
+    })
 }

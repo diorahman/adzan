@@ -5,8 +5,10 @@
   "main": "index.js",
   "bin": "bin/adzan",
   "dependencies": {
+    "bluebird": "^3.0.2",
     "cheerio": "^0.18.0",
     "colorful": "^2.1.0",
+    "fs-extra-promise": "^0.3.0",
     "hyperquest": "^1.0.1",
     "moment": "^2.9.0"
   },
