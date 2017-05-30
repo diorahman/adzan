@@ -1,10 +1,13 @@
+var argv = require('minimist')(process.argv.slice(2))
 var request = require('hyperquest')
 var cheerio = require('cheerio')
 var color = require('colorful')
 var moment = require('moment')
 
+var city = argv._.filter((arg) => parseInt(arg)).pop()
+
 var BASE_URL = 'https://www.jadwalsholat.org/adzan/ajax/ajax.daily1.php'
-var DEFAULT = 14 // bandung
+var DEFAULT = city || 14 // bandung
 var SHOLAT = ['Shubuh', 'Dzuhur', 'Ashr', 'Maghrib', 'Isya']
 
 function parse (html) {
